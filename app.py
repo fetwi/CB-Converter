@@ -17,7 +17,6 @@ st.set_page_config(
     page_title="Convertwi",
     page_icon="favicon.png",
     initial_sidebar_state="expanded",
-    toolbarMode="minimal"
 )
 
 # Get the current working directory
