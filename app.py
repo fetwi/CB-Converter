@@ -69,6 +69,3 @@ if docx_file is not None:
     # Step 6: Display the modified HTML in a code block and copy it to the clipboard
     modified_html = str(soup)
     st.code(modified_html, language='html')
-    if st.button('Copy to clipboard'):
-        st.clipboard_write(modified_html)
-        st.write('Copied to clipboard.')
