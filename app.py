@@ -21,7 +21,7 @@ st.write('''<style>
 cwd = os.path.dirname(__file__)
 
 # Step 1: Convert the .docx file to .html using pypandoc
-docx_file = st.file_uploader("Upload the script file (.docx format).", type="docx")
+docx_file = st.file_uploader("Step 1. Upload the script file (.docx format).", type="docx")
 if docx_file is not None:
     docx_file_path = os.path.join(cwd, 'file.docx')
     with open(docx_file_path, 'wb') as f:
@@ -32,7 +32,7 @@ if docx_file is not None:
 
     # Step 2: Read the .csv file and create the dictionary
     # Specify the path to your local CSV file
-    csv_file_path = os.path.join(cwd, 'abbr.csv')
+    csv_file_path = os.path.join(cwd, 'abbr_en.csv')
     df = pd.read_csv(csv_file_path)
     abbr_dict = df.set_index('Acronym')['Title'].to_dict()
 
