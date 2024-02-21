@@ -11,13 +11,11 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.markdown(
-    """
-<style>
-    #MainMenu { display:none;}
-</style>
-"""
-)
+st.write('''<style>
+#MainMenu { 
+    display: none;
+}        
+</style>''', unsafe_allow_html=True)
 
 # Get the current working directory
 cwd = os.path.dirname(__file__)
