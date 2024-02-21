@@ -6,7 +6,7 @@ import re
 import streamlit as st
 
 # Get the current working directory
-cwd = os.path.dirname(__file__) 
+cwd = os.path.dirname(__file__)
 
 # Step 1: Convert the .docx file to .html using pypandoc
 docx_file = st.file_uploader("Upload the script file (.docx format).", type="docx")
