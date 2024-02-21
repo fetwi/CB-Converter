@@ -5,18 +5,18 @@ import os
 import re
 import streamlit as st
 
+st.set_page_config(
+    page_title="Convertwi",
+    page_icon="favicon.png",
+    initial_sidebar_state="expanded",
+)
+
 st.markdown(
     """
 <style>
     #MainMenu { display:none;}
 </style>
 """
-)
-
-st.set_page_config(
-    page_title="Convertwi",
-    page_icon="favicon.png",
-    initial_sidebar_state="expanded",
 )
 
 # Get the current working directory
