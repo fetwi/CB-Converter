@@ -7,7 +7,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Convertwi",
-    page_icon="favicon.png",
+    page_icon="https://raw.githubusercontent.com/fetwi/convertwi/main/favicon.png",
     initial_sidebar_state="expanded",
 )
 
