@@ -66,9 +66,9 @@ if docx_file is not None:
                 abbr.string = abbr.string[1:]
                 abbr.insert_before(' ')
 
-        # Step 6: Write the modified HTML back to a file
-        output_file = os.path.join(cwd, 'output.html')
-        with open(output_file, 'w') as f:
-            f.write(str(soup))
-
-        st.write('File has been written successfully.')
+    # Step 6: Display the modified HTML in a code block and copy it to the clipboard
+    modified_html = str(soup)
+    st.code(modified_html, language='html')
+    if st.button('Copy to clipboard'):
+        st.clipboard_write(modified_html)
+        st.write('Copied to clipboard.')
