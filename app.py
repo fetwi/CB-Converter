@@ -11,10 +11,11 @@ cwd = os.path.dirname(__file__)
 # Step 1: Convert the .docx file to .html using pypandoc
 docx_file = st.file_uploader("Upload the script file (.docx format).", type="docx")
 if docx_file is not None:
-    with open(os.path.join(cwd, 'file.docx'), 'wb') as f:
+    docx_file_path = os.path.join(cwd, 'file.docx')
+    with open(docx_file_path, 'wb') as f:
         f.write(docx_file.getbuffer())
     html_file = os.path.join(cwd, 'file.html')
-    output = pypandoc.convert_file(docx_file.name, 'html', outputfile=html_file, extra_args=['--no-highlight'])
+    output = pypandoc.convert_file(docx_file_path, 'html', outputfile=html_file, extra_args=['--no-highlight'])
     assert output == ""
 
     # Step 2: Read the .csv file and create the dictionary
