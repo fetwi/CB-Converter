@@ -5,15 +5,19 @@ import os
 import re
 import streamlit as st
 
+st.markdown(
+    """
+<style>
+    #MainMenu { display:none;}
+</style>
+"""
+)
+
 st.set_page_config(
     page_title="Convertwi",
     page_icon="favicon.png",
-    layout="wide",
     initial_sidebar_state="expanded",
-    menu_items={
-        'Report a bug': "https://form.asana.com/?k=Zbn6Cw6DI-WwUopmdjbbcw&d=35664471811767",
-        'About': "# CandaBuys. This is an app to help out our content team!"
-    }
+    toolbarMode="minimal"
 )
 
 # Get the current working directory
