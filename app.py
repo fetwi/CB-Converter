@@ -12,9 +12,8 @@ st.set_page_config(
 )
 
 st.write('''<style>
-#MainMenu { 
-    display: none;
-}        
+#MainMenu { display: none;}
+p {font-size:16px}        
 </style>''', unsafe_allow_html=True)
 
 st.title('Convertwi')
