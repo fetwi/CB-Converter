@@ -69,3 +69,7 @@ if docx_file is not None:
     # Step 6: Display the modified HTML in a code block and copy it to the clipboard
     modified_html = str(soup)
     st.code(modified_html, language='html')
+
+    # Remove the temporary files
+    os.remove(docx_file_path)
+    os.remove(html_file)
