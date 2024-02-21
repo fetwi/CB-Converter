@@ -9,7 +9,7 @@ import streamlit as st
 cwd = os.path.dirname(__file__)
 
 # Step 1: Convert the .docx file to .html using pypandoc
-docx_file = st.file_uploader("Upload the script file (.docx format).", type="docx")
+docx_file = st.file_uploader("Upload a .docx file", type="docx")
 if docx_file is not None:
     with open(os.path.join(cwd, 'file.docx'), 'wb') as f:
         f.write(docx_file.getbuffer())
@@ -18,17 +18,17 @@ if docx_file is not None:
     assert output == ""
 
     # Step 2: Read the .csv file and create the dictionary
-    # Specify the path to your local CSV file
-    csv_file_path = os.path.join(cwd, 'abbr.csv')
-    df = pd.read_csv(csv_file_path)
-    abbr_dict = df.set_index('Acronym')['Title'].to_dict()
+    csv_file = st.file_uploader("Upload a .csv file", type="csv")
+    if csv_file is not None:
+        df = pd.read_csv(csv_file)
+        abbr_dict = df.set_index('Acronym')['Title'].to_dict()
 
-    # Sort the dictionary by length of acronym, longest first
-    abbr_dict = {k: v for k, v in sorted(abbr_dict.items(), key=lambda item: -len(item[0]))}
+        # Sort the dictionary by length of acronym, longest first
+        abbr_dict = {k: v for k, v in sorted(abbr_dict.items(), key=lambda item: -len(item[0]))}
 
-    # Step 3: Parse the HTML
-    with open(html_file, 'r') as f:
-        soup = BeautifulSoup(f, 'html.parser')
+        # Step 3: Parse the HTML
+        with open(html_file, 'r') as f:
+            soup = BeautifulSoup(f, 'html.parser')
 
         # Remove all code before the first <h1> tag
         first_h1 = soup.find('h1')
