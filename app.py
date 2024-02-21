@@ -6,8 +6,8 @@ import re
 import streamlit as st
 
 st.set_page_config(
-    page_title="Convertwi",
-    page_icon="https://raw.githubusercontent.com/fetwi/convertwi/main/favicon.png",
+    page_title="CONVERTWI",
+    page_icon="favicon.png",
     initial_sidebar_state="expanded",
 )
 
@@ -16,9 +16,7 @@ st.write('''<style>
 p {font-size:16px}        
 </style>''', unsafe_allow_html=True)
 
-st.title('Convertwi')
-st.divider()
-
+st.title('CONVERTWI')
 
 # Get the current working directory
 cwd = os.path.dirname(__file__)
@@ -83,7 +81,7 @@ if docx_file is not None:
 
     # Step 6: Display the modified HTML in a code block and copy it to the clipboard
     modified_html = str(soup)
-    st.text_area('Step 2. Copy HTML code:')
+    st.markdown('Step 2. Copy HTML code:')
     st.code(modified_html, language='html')
 
     # Remove the temporary files
