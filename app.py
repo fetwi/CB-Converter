@@ -23,7 +23,7 @@ st.subheader('Step 1. Upload the script file (.docx format).')
 cwd = os.path.dirname(__file__)
 
 # Step 1: Convert the .docx file to .html using pypandoc
-docx_file = st.file_uploader(type="docx")
+docx_file = st.file_uploader(,type="docx")
 if docx_file is not None:
     docx_file_path = os.path.join(cwd, 'file.docx')
     with open(docx_file_path, 'wb') as f:
